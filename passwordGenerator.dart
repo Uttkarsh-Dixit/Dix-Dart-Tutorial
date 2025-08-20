@@ -28,7 +28,6 @@ String generatePassword (int size) {
 
   final String all = upper + lower + digits + chars;
   final Random rnd = Random.secure();
-
   return List.generate(
       size,
       (_)=>all[rnd.nextInt(all.length)]
