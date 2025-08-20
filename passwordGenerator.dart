@@ -27,7 +27,6 @@ String generatePassword (int size) {
   final String chars = r'!@#$%^&*()~_+-=<>?:"{}|[]\;,';
 
   final String all = upper + lower + digits + chars;
-
   final Random rnd = Random.secure();
 
   return List.generate(
