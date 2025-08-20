@@ -1,0 +1,3 @@
+main(){
+  print("first program");
+}
