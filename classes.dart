@@ -1,5 +1,109 @@
 // import 'dart:io';
 
+mixin swimmer {
+  void swim () {
+    print("I can swim");
+  }
+}
+
+mixin walker{
+  void walk () {
+    print("I can walk.");
+  }
+}
+
+class human extends person with swimmer, walker{
+  human(String name): super(name);
+}
+
+class Animal {
+  void sound() {}
+}
+
+class dog extends Animal{
+  @override
+  void sound() {
+    print("Dog Barks");
+  }
+}
+
+class cat extends Animal {
+  void sound () {
+    print("Cat meows");
+  }
+}
+
+class person {
+  late String name;
+  late String gender;
+
+
+  person(this.name);
+
+  display() {
+    if(gender=="M") {
+      print("His name is $name ");
+    }
+    else {
+      print("Her name is $name ");
+    }
+  }
+
+}
+
+class school extends person {
+  int id;
+
+  school(this.id, String name) : super(name);
+}
+
+class student extends school {
+  String section;
+
+  student(this.section, int id, String name) : super(id,name);
+
+  @override
+  display () {
+    print("$name is in $section section with id: $id");
+
+  }
+}
+
+
+void main() {
+  person Amit= person("Amit");
+  Amit.gender="M";
+  school Jay= school(012, "jay");
+  Jay.gender="F";
+  student Om= student("C", 129, "Om");
+  Om.gender="M";
+
+  print("Name ${Amit.name}");
+  Amit.display();
+
+  print("Name ${Jay.name}");
+  Jay.display();
+
+  print("Name ${Om.name} Gender: ${Om.gender} ");
+  Om.display();
+
+  print("===========================");
+  Animal muku = dog();
+  muku.sound();
+
+  Animal michan= cat();
+  michan.sound();
+  print("===========================");
+
+  print("===========Uttkarsh===========");
+  human me= human("Uttkarsh");
+  me.gender='M';
+  me.swim();
+  me.walk();
+  me.display();
+
+
+}
 
 /*
 extension type rupee (int paise) {
