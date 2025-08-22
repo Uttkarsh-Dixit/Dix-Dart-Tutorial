@@ -17,14 +17,17 @@ void main() {
         break;
       case '2':
         names=unique(str);
+        print("The unique character in the provided string are $names");
         break;
       case '3':
+        names=unique(str);
         frequency(names, str);
         break;
       case '4':
         length(str);
         print("-----------------");
         names=unique(str);
+        print("The unique character in the provided string are $names");
         print("-----------------");
         frequency(names, str);
         print("-----------------");
@@ -54,7 +57,7 @@ Set<String> unique(String str) {
     names.add(str[i]);
     i++;
   }
-  print("The unique character in the provided string are $names");
+  // print("The unique character in the provided string are $names");
   return names;
 }
 
@@ -70,5 +73,5 @@ void frequency(Set<String> names, String str) {
     freqMap[str[i]]=(j!+1);
     i++;
   }
-  print("New map= $freqMap");
+  print("Frequency= $freqMap");
 }
